@@ -1,0 +1,16 @@
+{% extends "register/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form action="" method="POST" autocomplete="off">
+    {% csrf_token %}
+    {{form|crispy}}
+    <div class="raw">
+        <div class="col-md-8" style="margin-top: 10px;">
+            <button class="btn btn-success btn-block btn-lg" type="submit"><i class="fas fa-database"></i> Submit</button>
+        </div>
+        <div class="col-md-4" style="margin-top: 10px;">
+            <a href="{% url 'employee_list' %}" class="btn btn-secondary btn-block btn-lg">Back to list</a>
+        </div>
+    </div>
+</form>
+{% endblock content %}
